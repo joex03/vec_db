@@ -20,12 +20,6 @@ class VecDB:
         if os.path.exists(self.db_path):
             os.remove(self.db_path)
         self.generate_database(db_size)
-     else:
-        self.db_path = 'data' + self.db_path
-        self.data_size = int(self.db_path)
-        self.codebooks_file_path = 'codebooks' + self.db_path
-        self.inverted_index_path = 'inverted_index' + self.file_path
-        self.load_codebooks()
     
     def calculate_similarity(self, node1, node2) -> float:
         dot_product = np.dot(node1, node2)
